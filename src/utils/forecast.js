@@ -14,7 +14,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Nie moge znalezc lokalizacji!',undefined)
         } else {
             const data = response.currently
-            const text = (response.daily.data[0].summary + "\nIt is currently "+ data.temperature +" degrees out. \nThere is a "+ data.precipProbability + "% chance of rain.")
+            const text = (response.daily.data[0].summary + "\nAktualnie jest "+ data.temperature +" °C. \nIstnieje "+ data.precipProbability + "% szans na deszcz. Odczuwalna temperatura maksymalna wyniesie " +  response.daily.data[0].apparentTemperatureHigh + " °C, minimalna "+ response.daily.data[0].apparentTemperatureLow + " °C")
             callback(undefined,text)
         }
     })
